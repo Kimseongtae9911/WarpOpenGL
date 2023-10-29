@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GLSL">
+      <UniqueIdentifier>{b181b477-e59c-45ef-8f11-e1ee27bdceba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{7dd079bb-40c2-4d7d-82ef-0675e5d6d499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Main">
+      <UniqueIdentifier>{1d148074-e51f-473f-8ba0-0e1af6059f03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Manager">
+      <UniqueIdentifier>{3640d6e3-5af8-453b-a8ae-579d2fa21b03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Manager\Collision">
+      <UniqueIdentifier>{c1ee9ee7-74b9-4674-8352-920de656375d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Manager\Scene">
+      <UniqueIdentifier>{311d68a2-0b9e-4938-b72e-f8315d554d5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Object">
+      <UniqueIdentifier>{6ee96f6f-2f50-41fe-b82c-70cc632fbb96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scene">
+      <UniqueIdentifier>{908e3b29-d882-4f58-9620-92c9b32bfc2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Manager\Userinput">
+      <UniqueIdentifier>{8d264c1c-624c-45e8-97b2-9462010c1c95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Manager\Shader">
+      <UniqueIdentifier>{aa5146fc-71ae-4e63-a710-42701681010f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CFramework.h">
+      <Filter>src\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CObject.h">
+      <Filter>src\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="MathUtil.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyInput.h">
+      <Filter>src\Manager\Userinput</Filter>
+    </ClInclude>
+    <ClInclude Include="CBullet.h">
+      <Filter>src\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>src\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollisionManager.h">
+      <Filter>src\Manager\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneManager.h">
+      <Filter>src\Manager\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CShaderManager.h">
+      <Filter>src\Manager\Shader</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="컴그.cpp">
+      <Filter>src\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CFramework.cpp">
+      <Filter>src\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CObject.cpp">
+      <Filter>src\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyInput.cpp">
+      <Filter>src\Manager\Userinput</Filter>
+    </ClCompile>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>src\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>src\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollisionManager.cpp">
+      <Filter>src\Manager\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneManager.cpp">
+      <Filter>src\Manager\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CShaderManager.cpp">
+      <Filter>src\Manager\Shader</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vertex.glsl">
+      <Filter>GLSL</Filter>
+    </None>
+    <None Include="fragment.glsl">
+      <Filter>GLSL</Filter>
+    </None>
+  </ItemGroup>
+</Project>
