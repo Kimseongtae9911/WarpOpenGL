@@ -147,11 +147,13 @@
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CFramework.cpp" />
     <ClCompile Include="CKeyInput.cpp" />
+    <ClCompile Include="CMesh.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CShaderManager.cpp" />
+    <ClCompile Include="CTransform.cpp" />
     <ClCompile Include="컴그.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,11 +161,13 @@
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CFramework.h" />
     <ClInclude Include="CKeyInput.h" />
+    <ClInclude Include="CMesh.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneManager.h" />
     <ClInclude Include="CShaderManager.h" />
+    <ClInclude Include="CTransform.h" />
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>

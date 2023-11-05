@@ -39,6 +39,12 @@
     <Filter Include="src\Manager\Shader">
       <UniqueIdentifier>{aa5146fc-71ae-4e63-a710-42701681010f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Mesh">
+      <UniqueIdentifier>{16dc1908-5fc7-4f91-ade7-344c34ac49c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Object\Transfrom">
+      <UniqueIdentifier>{92f33c8e-7248-4eb9-a2f4-7c6e362dee91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -74,6 +80,12 @@
     <ClInclude Include="CShaderManager.h">
       <Filter>src\Manager\Shader</Filter>
     </ClInclude>
+    <ClInclude Include="CMesh.h">
+      <Filter>src\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="CTransform.h">
+      <Filter>src\Object\Transfrom</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="컴그.cpp">
@@ -105,6 +117,12 @@
     </ClCompile>
     <ClCompile Include="CShaderManager.cpp">
       <Filter>src\Manager\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="CMesh.cpp">
+      <Filter>src\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CTransform.cpp">
+      <Filter>src\Object\Transfrom</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

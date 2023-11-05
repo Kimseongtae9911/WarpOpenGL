@@ -1,14 +1,13 @@
 #version 440
-layout(location = 0) in vec3 Pos;
-layout(location = 1) in vec3 Color;
+layout(location = 0) in vec3 vPos;
+layout(location = 1) in vec3 in_Color;
 
-uniform vec2 movePos;
-
+uniform mat4 modelTransform;
 out vec4 out_Color;
 
 void main()
 {
-	vec3 newPos = vec3(Pos.xy + movePos, Pos.z);
-	gl_Position = vec4(newPos, 1.0);
-	out_Color = vec4(Color, 1.0);
+	gl_Position = modelTransform * vec4(vPos, 1.0);
+
+	out_Color = vec4(in_Color, 1.0);
 }

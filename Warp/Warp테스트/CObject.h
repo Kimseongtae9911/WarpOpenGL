@@ -1,11 +1,6 @@
 #pragma once
-
-struct Mesh
-{
-	vector<glm::vec3> vertex;
-	vector<glm::vec3> color;
-	array<GLuint, 2> vbos;
-};
+#include "CMesh.h"
+#include "CTransform.h"
 
 class CObject
 {
@@ -19,11 +14,10 @@ public:
 	void SetDir(const Vector2& dir);
 
 protected:
-	Vector2 m_pos;	//사각형의 정가운데
-	Vector2 m_dir;	//방향
-	Vector2 m_size;
+	CTransform* m_transform;
+	Vector2 m_dir;	//방향	
 	float m_speed;
 
-	Mesh* m_mesh;
+	shared_ptr<MeshInfo> m_mesh;
 };
 

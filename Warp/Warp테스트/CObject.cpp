@@ -6,9 +6,7 @@ constexpr float PLAYER_SPEED = 1.f;
 
 CObject::CObject()
 {
-	m_pos.x = m_pos.y = 0.5f;
-
-	m_mesh = new Mesh();
+	m_transform = new CTransform();
 }
 
 CObject::~CObject()
@@ -17,13 +15,13 @@ CObject::~CObject()
 		glDeleteBuffers(1, &vbo);
 	}
 
-	delete m_mesh;
+	delete m_transform;
 }
 
 bool CObject::Update(float elapsedTime)
 {
-	m_pos += m_dir * elapsedTime * m_speed;
-
+	Vector2 moveAmount = m_dir * elapsedTime * m_speed;
+	m_transform->Move(glm::vec3(moveAmount.x, moveAmount.y, 0.0f));
 	return true;
 }
 
@@ -31,9 +29,7 @@ void CObject::Render()
 {
 	GLuint program = CShaderManager::GetInstance()->UseShader(SHADER_TYPE::DEFAULT);
 
-	GLuint moveLocation = 
-		glGetUniformLocation(program, "movePos");
-	glUniform2f(moveLocation, m_pos.x, m_pos.y);
+	glUniformMatrix4fv(glGetUniformLocation(program, "modelTransform"), 1, GL_FALSE, glm::value_ptr(m_transform->GetWorldMatrix()));
 
 	for (int i = 0; i < m_mesh->vbos.size(); ++i) {
 		glEnableVertexAttribArray(i);
