@@ -14,6 +14,9 @@ public:
 	void SetScale(const glm::vec3 scale) { m_scale = scale; }
 	void SetRadian(const glm::vec3 radian) { m_rotateRadian = radian; }
 
+	void Update(const glm::vec3& moveAmount);
+
+private:
 	void Move(const glm::vec3& moveAmount);
 
 private:

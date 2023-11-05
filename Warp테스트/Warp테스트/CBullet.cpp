@@ -11,8 +11,9 @@ CBullet::CBullet(const glm::vec3& pos, const Vector2& dir)
 	m_transform->SetPos(pos);
 	m_dir = dir;
 	m_speed = BULLET_SPEED;
+	m_transform->SetScale({ 0.1f, 0.1f, 0.1f });
 
-	m_mesh = CMesh::GetMeshInfo("cube.obj", glm::vec3(1.0f, 0.0f, 0.0f));
+	m_mesh = CMesh::GetMeshInfo("cube.obj", glm::vec3(0.0f, 1.0f, 0.0f));
 
 	glGenBuffers(1, &m_mesh->vbos[0]);
 	glBindBuffer(GL_ARRAY_BUFFER, m_mesh->vbos[0]);

@@ -13,7 +13,7 @@ void main(int argc, char** argv)
 	glutInit(&argc, argv); // glut 초기화
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA); // 디스플레이 모드 설정
 	glutInitWindowPosition(100, 100); // 윈도우의 위치 지정
-	glutInitWindowSize(800, 800); // 윈도우의 크기 지정
+	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT); // 윈도우의 크기 지정
 	glutCreateWindow("스터디"); // 윈도우 생성
 
 	//--- GLEW 초기화하기

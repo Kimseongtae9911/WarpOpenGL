@@ -26,6 +26,9 @@ using namespace std::chrono;
 #define DIR_RIGHT 0x08
 #define FIRE_BULLET 0x10
 
+constexpr int WINDOW_WIDTH = 800;
+constexpr int WINDOW_HEIGHT = 800;
+
 inline bool IsfloatEqual(float a, float b)
 {
 	if (abs(a - b) <= FLT_EPSILON)	//abs : 절댓값해주능거

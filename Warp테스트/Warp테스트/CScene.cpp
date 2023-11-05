@@ -9,6 +9,7 @@ CScene::CScene()
 	}
 
 	m_updateObjects[OBJ_TYPE::PLAYER].push(new CPlayer());
+	m_camera = make_unique<CCamera>();
 }
 
 CScene::~CScene()
@@ -17,6 +18,8 @@ CScene::~CScene()
 
 void CScene::Update(float elapsedTime)
 {
+	m_camera->Update();
+
 	for (int i = static_cast<int>(OBJ_TYPE::START); i < static_cast<int>(OBJ_TYPE::END); ++i) {
 		queue<CObject*>newxtUpdateQueue;
 		while (!m_updateObjects[static_cast<OBJ_TYPE>(i)].empty()) {
@@ -31,6 +34,8 @@ void CScene::Update(float elapsedTime)
 
 void CScene::Render()
 {
+	m_camera->Render();
+
 	for (int i = static_cast<int>(OBJ_TYPE::START); i < static_cast<int>(OBJ_TYPE::END); ++i) {
 		for (CObject* object : m_renderObjects[static_cast<OBJ_TYPE>(i)]) {
 			object->Render();
