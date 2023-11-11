@@ -45,6 +45,9 @@
     <Filter Include="src\Object\Transfrom">
       <UniqueIdentifier>{92f33c8e-7248-4eb9-a2f4-7c6e362dee91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Object\Camera">
+      <UniqueIdentifier>{66335806-e03e-4202-8ede-9de6a49f8bde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -86,6 +89,9 @@
     <ClInclude Include="CTransform.h">
       <Filter>src\Object\Transfrom</Filter>
     </ClInclude>
+    <ClInclude Include="CCamera.h">
+      <Filter>src\Object\Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="컴그.cpp">
@@ -123,6 +129,9 @@
     </ClCompile>
     <ClCompile Include="CTransform.cpp">
       <Filter>src\Object\Transfrom</Filter>
+    </ClCompile>
+    <ClCompile Include="CCamera.cpp">
+      <Filter>src\Object\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,13 @@ constexpr float BULLET_SPEED = 5.0f;
 CBullet::CBullet(const glm::vec3& pos, const Vector2& dir)
 {
 	m_transform->SetPos(pos);
-	m_dir = dir;
+	m_transform->SetScale({ 0.3f, 0.3f, 0.3f });
+
+	if (IsfloatEqual(dir.x, 0.f) && IsfloatEqual(dir.y, 0.f))
+		m_dir.x = 1.0f;
+	else 
+		m_dir = dir;
+
 	m_speed = BULLET_SPEED;
 
 	m_mesh = CMesh::GetMeshInfo("cube.obj", glm::vec3(1.0f, 0.0f, 0.0f));

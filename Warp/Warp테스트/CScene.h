@@ -1,5 +1,7 @@
 #pragma once
 #include "CPlayer.h"
+#include "CCamera.h"
+
 class CScene
 {
 public:
@@ -15,5 +17,7 @@ public:
 private:
 	unordered_map<OBJ_TYPE, queue<CObject*>> m_updateObjects;
 	unordered_map<OBJ_TYPE, vector<CObject*>> m_renderObjects;
+
+	unique_ptr<CCamera> m_camera;
 };
 

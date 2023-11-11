@@ -14,7 +14,7 @@ CPlayer::CPlayer()
 	m_transform->SetPos(glm::vec3(0.5f, 0.5f, 0.0f));
 	m_speed = PLAYER_SPEED;
 
-	m_mesh = CMesh::GetMeshInfo("cube.obj", glm::vec3(1.0f, 0.0f, 0.0f));
+	m_mesh = CMesh::GetMeshInfo("test.obj", glm::vec3(1.0f, 0.0f, 0.0f));
 
 	glGenBuffers(1, &m_mesh->vbos[0]);
 	glBindBuffer(GL_ARRAY_BUFFER, m_mesh->vbos[0]);

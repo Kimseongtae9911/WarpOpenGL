@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CBullet.cpp" />
+    <ClCompile Include="CCamera.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
     <ClCompile Include="CFramework.cpp" />
     <ClCompile Include="CKeyInput.cpp" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h" />
+    <ClInclude Include="CCamera.h" />
     <ClInclude Include="CCollisionManager.h" />
     <ClInclude Include="CFramework.h" />
     <ClInclude Include="CKeyInput.h" />
