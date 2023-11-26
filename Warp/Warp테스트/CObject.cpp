@@ -23,8 +23,7 @@ CObject::~CObject()
 bool CObject::Update(float elapsedTime)
 {
 	Vector2 moveAmount = m_dir * elapsedTime * m_speed;
-	m_transform->Update(glm::vec3(moveAmount.x, 0.f, -moveAmount.y));
-	m_boundingBox->Update(m_transform->GetPos());
+	m_transform->Update(glm::vec3(moveAmount.x, 0.f, -moveAmount.y));	
 	return true;
 }
 

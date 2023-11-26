@@ -11,16 +11,21 @@ public:
 	
 	vector<glm::vec3> GetCorners() const;
 
-	const glm::vec3& GetMin() const { return m_min; }
-	const glm::vec3& GetMax() const { return m_max; }
+	glm::vec3 GetMin() const { 
+		glm::vec4 result =  m_matrix * glm::vec4(m_min, 1.0f);
+		return glm::vec3(result);
+	}
+	glm::vec3 GetMax() const { 
+		glm::vec4 result = m_matrix * glm::vec4(m_max, 1.0f);
+		return glm::vec3(result);
+	}
 
-	void Update(const glm::vec3& pos);
 	void Render(const glm::mat4& modelMatrix, const glm::mat4& view, const glm::mat4& proj);
 
 private:
 	glm::vec3 m_min;
 	glm::vec3 m_max;
-	glm::vec3 m_pos;
 	GLuint m_vbo;
+	glm::mat4 m_matrix;
 };
 

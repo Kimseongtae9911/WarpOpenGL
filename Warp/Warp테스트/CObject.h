@@ -13,6 +13,7 @@ public:
 	virtual void Render(const glm::mat4 view, const glm::mat4 proj);
 
 	void SetDir(const Vector2& dir);
+	CBoundingBox* GetBoundingBox() const { return m_boundingBox; }
 
 protected:
 	CTransform* m_transform;

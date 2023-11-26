@@ -7,6 +7,7 @@ CEnemy::CEnemy()
 	m_transform->SetPos(glm::vec3(0.5f, 0.5f, 0.5f));
 
 	m_mesh = CMesh::GetMeshInfo("sphere.obj", glm::vec3(0.0f, 1.0f, 0.0f));
+	m_boundingBox->CreateBoundingBox(m_mesh->vertex);
 
 	glGenBuffers(1, &m_mesh->vbos[0]);
 	glBindBuffer(GL_ARRAY_BUFFER, m_mesh->vbos[0]);
@@ -40,4 +41,5 @@ bool CEnemy::Update(float elapsedTime)
 void CEnemy::Render(const glm::mat4 view, const glm::mat4 proj)
 {
 	CObject::Render(view, proj);
+	m_boundingBox->Render(m_transform->GetWorldMatrix(), view, proj);
 }

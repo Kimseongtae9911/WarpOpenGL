@@ -18,9 +18,9 @@ void CBoundingBox::CreateBoundingBox(const std::vector<glm::vec3>& vertices)
 
 bool CBoundingBox::Intersect(const CBoundingBox& other) const
 {
-    return !(m_max.x < other.GetMin().x || m_min.x > other.GetMax().x ||
-             m_max.y < other.GetMin().y || m_min.y > other.GetMax().y ||
-             m_max.z < other.GetMin().z || m_min.z > other.GetMax().z);
+    return !(GetMax().x < other.GetMin().x || GetMin().x > other.GetMax().x ||
+            GetMax().y < other.GetMin().y || GetMin().y > other.GetMax().y ||
+            GetMax().z < other.GetMin().z || GetMin().z > other.GetMax().z);
 }
 
 vector<glm::vec3> CBoundingBox::GetCorners() const
@@ -65,11 +65,6 @@ vector<glm::vec3> CBoundingBox::GetCorners() const
     return corners;
 }
 
-void CBoundingBox::Update(const glm::vec3& pos)
-{
-    m_pos = pos;
-}
-
 void CBoundingBox::Render(const glm::mat4& modelMatrix, const glm::mat4& view, const glm::mat4& proj)
 {
     GLuint program = CShaderManager::GetInstance()->UseShader(SHADER_TYPE::BOUNDING_BOX);
@@ -91,4 +86,6 @@ void CBoundingBox::Render(const glm::mat4& modelMatrix, const glm::mat4& view, c
     glDrawArrays(GL_LINE_LOOP, 24, 4);
 
     glDisableVertexAttribArray(0);
+
+    m_matrix = modelMatrix;
 }

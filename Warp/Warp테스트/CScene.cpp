@@ -33,6 +33,14 @@ void CScene::Update(float elapsedTime)
 		}
 		m_updateObjects[static_cast<OBJ_TYPE>(i)].swap(newxtUpdateQueue);
 	}
+
+	CObject* player = m_updateObjects[OBJ_TYPE::PLAYER].front();
+	CObject* enemy = m_updateObjects[OBJ_TYPE::ENEMY].front();
+	
+	if (player->GetBoundingBox()->Intersect(*enemy->GetBoundingBox())) {
+		cout << "Ãæµ¹" << endl;
+	}
+	
 }
 
 void CScene::Render()
@@ -41,10 +49,9 @@ void CScene::Render()
 
 	for (int i = static_cast<int>(OBJ_TYPE::START); i < static_cast<int>(OBJ_TYPE::END); ++i) {
 		for (CObject* object : m_renderObjects[static_cast<OBJ_TYPE>(i)]) {
-			
 			object->Render(m_camera->GetViewMatrix(), m_camera->GetProjectionMatrix());
 		}
-	}
+	}	
 
 	for (int i = static_cast<int>(OBJ_TYPE::START); i < static_cast<int>(OBJ_TYPE::END); ++i) {
 		m_renderObjects[static_cast<OBJ_TYPE>(i)].clear();
