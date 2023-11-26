@@ -15,6 +15,7 @@ void main(int argc, char** argv)
 	glutInitWindowPosition(100, 100); // 윈도우의 위치 지정
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT); // 윈도우의 크기 지정
 	glutCreateWindow("스터디"); // 윈도우 생성
+	//glEnable(GL_CULL_FACE);
 
 	//--- GLEW 초기화하기
 	glewExperimental = GL_TRUE;
@@ -30,6 +31,8 @@ void main(int argc, char** argv)
 	CShaderManager::GetInstance()->
 		AddShader(SHADER_TYPE::DEFAULT,
 			"vertex.glsl", "fragment.glsl");
+
+	CShaderManager::GetInstance()->AddShader(SHADER_TYPE::BOUNDING_BOX, "boundingVertex.glsl", "fragment.glsl");
 
 	glutDisplayFunc(drawScene);
 	glutIdleFunc(drawScene);

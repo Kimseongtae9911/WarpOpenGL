@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CScene.h"
+#include "CEnemy.h"
 
 CScene::CScene()
 {
@@ -9,6 +10,7 @@ CScene::CScene()
 	}
 
 	m_updateObjects[OBJ_TYPE::PLAYER].push(new CPlayer());
+	m_updateObjects[OBJ_TYPE::ENEMY].push(new CEnemy());
 
 	m_camera = make_unique<CCamera>();
 }
@@ -39,7 +41,8 @@ void CScene::Render()
 
 	for (int i = static_cast<int>(OBJ_TYPE::START); i < static_cast<int>(OBJ_TYPE::END); ++i) {
 		for (CObject* object : m_renderObjects[static_cast<OBJ_TYPE>(i)]) {
-			object->Render();
+			
+			object->Render(m_camera->GetViewMatrix(), m_camera->GetProjectionMatrix());
 		}
 	}
 

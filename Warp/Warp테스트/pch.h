@@ -36,6 +36,6 @@ inline bool IsfloatEqual(float a, float b)
 	return false;
 }
 
-enum class OBJ_TYPE { START, PLAYER, BULLET, END };
+enum class OBJ_TYPE { START, PLAYER, ENEMY, BULLET, END };
 
-enum class SHADER_TYPE { DEFAULT };
+enum class SHADER_TYPE { DEFAULT, BOUNDING_BOX };

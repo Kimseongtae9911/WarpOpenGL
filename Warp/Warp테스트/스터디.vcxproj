@@ -143,9 +143,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CBoundingBox.cpp" />
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCamera.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
+    <ClCompile Include="CEnemy.cpp" />
     <ClCompile Include="CFramework.cpp" />
     <ClCompile Include="CKeyInput.cpp" />
     <ClCompile Include="CMesh.cpp" />
@@ -158,9 +160,11 @@
     <ClCompile Include="컴그.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CBoundingBox.h" />
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCamera.h" />
     <ClInclude Include="CCollisionManager.h" />
+    <ClInclude Include="CEnemy.h" />
     <ClInclude Include="CFramework.h" />
     <ClInclude Include="CKeyInput.h" />
     <ClInclude Include="CMesh.h" />
@@ -174,6 +178,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="boundingVertex.glsl" />
     <None Include="fragment.glsl" />
     <None Include="vertex.glsl" />
   </ItemGroup>

@@ -48,6 +48,9 @@
     <Filter Include="src\Object\Camera">
       <UniqueIdentifier>{66335806-e03e-4202-8ede-9de6a49f8bde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Util">
+      <UniqueIdentifier>{4b824202-1c90-4412-8324-8d83ad4cfba1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -92,6 +95,12 @@
     <ClInclude Include="CCamera.h">
       <Filter>src\Object\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="CBoundingBox.h">
+      <Filter>src\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemy.h">
+      <Filter>src\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="컴그.cpp">
@@ -133,12 +142,21 @@
     <ClCompile Include="CCamera.cpp">
       <Filter>src\Object\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="CBoundingBox.cpp">
+      <Filter>src\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemy.cpp">
+      <Filter>src\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="vertex.glsl">
       <Filter>GLSL</Filter>
     </None>
     <None Include="fragment.glsl">
+      <Filter>GLSL</Filter>
+    </None>
+    <None Include="boundingVertex.glsl">
       <Filter>GLSL</Filter>
     </None>
   </ItemGroup>

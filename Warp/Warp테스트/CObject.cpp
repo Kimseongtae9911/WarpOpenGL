@@ -7,6 +7,7 @@ constexpr float PLAYER_SPEED = 1.f;
 CObject::CObject()
 {
 	m_transform = new CTransform();
+	m_boundingBox = new CBoundingBox();
 }
 
 CObject::~CObject()
@@ -16,16 +17,18 @@ CObject::~CObject()
 	}
 
 	delete m_transform;
+	delete m_boundingBox;
 }
 
 bool CObject::Update(float elapsedTime)
 {
 	Vector2 moveAmount = m_dir * elapsedTime * m_speed;
-	m_transform->Update(glm::vec3(moveAmount.x, moveAmount.y, 0.0f));
+	m_transform->Update(glm::vec3(moveAmount.x, 0.f, -moveAmount.y));
+	m_boundingBox->Update(m_transform->GetPos());
 	return true;
 }
 
-void CObject::Render()
+void CObject::Render(const glm::mat4 view, const glm::mat4 proj)
 {
 	GLuint program = CShaderManager::GetInstance()->UseShader(SHADER_TYPE::DEFAULT);
 

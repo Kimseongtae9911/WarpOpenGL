@@ -7,7 +7,7 @@ public:
 	~CCamera();
 
 	const glm::mat4& GetViewMatrix() const { return m_viewMatrix; }
-
+	const glm::mat4& GetProjectionMatrix() const { return m_projectMatrix; }
 	void Update();
 	void Render();
 

@@ -14,7 +14,8 @@ CPlayer::CPlayer()
 	m_transform->SetPos(glm::vec3(0.5f, 0.5f, 0.0f));
 	m_speed = PLAYER_SPEED;
 
-	m_mesh = CMesh::GetMeshInfo("test.obj", glm::vec3(1.0f, 0.0f, 0.0f));
+	m_mesh = CMesh::GetMeshInfo("cube.obj", glm::vec3(1.0f, 0.0f, 0.0f));
+	m_boundingBox->CreateBoundingBox(m_mesh->vertex);
 
 	glGenBuffers(1, &m_mesh->vbos[0]);
 	glBindBuffer(GL_ARRAY_BUFFER, m_mesh->vbos[0]);
@@ -72,7 +73,8 @@ bool CPlayer::Update(float elapsedTime)
 	return true;
 }
 
-void CPlayer::Render()
+void CPlayer::Render(const glm::mat4 view, const glm::mat4 proj)
 {
-	CObject::Render();
+	CObject::Render(view, proj);
+	m_boundingBox->Render(m_transform->GetWorldMatrix(), view, proj);
 }

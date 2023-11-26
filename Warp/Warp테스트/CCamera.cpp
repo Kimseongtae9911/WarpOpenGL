@@ -8,7 +8,7 @@ constexpr float FRUSTUM_FOVY = 45.f;
 
 CCamera::CCamera()
 {
-	m_pos = { 0.f, 1.0f, 5.0f };
+	m_pos = { 0.f, 7.0f, 5.0f };
 	m_lookAt = { 0.0f, 0.0f, 0.0f };
 	m_up = { 0.0f, 1.0f, 0.0f };
 	m_viewMatrix = glm::mat4(1.0f);

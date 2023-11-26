@@ -7,7 +7,7 @@ public:
 	~CPlayer() override;	//상속해줘 앞에 virtual 상속받아 뒤에 override
 
 	bool Update(float elapsedTime) override;
-	void Render() override;
+	void Render(const glm::mat4 view, const glm::mat4 proj) override;
 
 private:
 	Vector2 m_prevPos;

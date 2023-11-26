@@ -1,24 +1,12 @@
 #include "pch.h"
-#include "CBullet.h"
-#include "CCollisionManager.h"
+#include "CEnemy.h"
 #include "CSceneManager.h"
 
-constexpr float BULLET_SIZE = 0.1f;
-constexpr float BULLET_SPEED = 5.0f;
-
-CBullet::CBullet(const glm::vec3& pos, const Vector2& dir)
+CEnemy::CEnemy()
 {
-	m_transform->SetPos(pos);
-	m_transform->SetScale({ 0.3f, 0.3f, 0.3f });
+	m_transform->SetPos(glm::vec3(0.5f, 0.5f, 0.5f));
 
-	if (IsfloatEqual(dir.x, 0.f) && IsfloatEqual(dir.y, 0.f))
-		m_dir.x = 1.0f;
-	else 
-		m_dir = dir;
-
-	m_speed = BULLET_SPEED;
-
-	m_mesh = CMesh::GetMeshInfo("cube.obj", glm::vec3(1.0f, 0.0f, 0.0f));
+	m_mesh = CMesh::GetMeshInfo("sphere.obj", glm::vec3(0.0f, 1.0f, 0.0f));
 
 	glGenBuffers(1, &m_mesh->vbos[0]);
 	glBindBuffer(GL_ARRAY_BUFFER, m_mesh->vbos[0]);
@@ -37,24 +25,19 @@ CBullet::CBullet(const glm::vec3& pos, const Vector2& dir)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * m_mesh->uvs.size(), m_mesh->uvs.data(), GL_STATIC_DRAW);
 }
 
-CBullet::~CBullet()
+CEnemy::~CEnemy()
 {
+	
 }
 
-bool CBullet::Update(float elapsedTime)
+bool CEnemy::Update(float elapsedTime)
 {
-	CObject::Update(elapsedTime);
-	//if (!CCollisionManager::GetInstace()->CheckValidPos(m_pos, m_size)) {
-	//	delete this;
-	//	return false;
-	//}
-	//else {
-		CSceneManager::GetInstance()->AddRenderObj(OBJ_TYPE::BULLET, this);
-		return true;
-	//}
+	CSceneManager::GetInstance()->AddRenderObj(OBJ_TYPE::PLAYER, this);
+
+	return true;
 }
 
-void CBullet::Render(const glm::mat4 view, const glm::mat4 proj)
+void CEnemy::Render(const glm::mat4 view, const glm::mat4 proj)
 {
 	CObject::Render(view, proj);
 }

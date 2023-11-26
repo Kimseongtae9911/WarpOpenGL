@@ -7,5 +7,5 @@ public:
 	~CBullet() override;	//override - 같은 메모리를 두번 해제할수있어서 bullet의 소멸자만 해제하려고
 
 	bool Update(float elapsedTime) override;
-	void Render() override;
+	void Render(const glm::mat4 view, const glm::mat4 proj) override;
 };

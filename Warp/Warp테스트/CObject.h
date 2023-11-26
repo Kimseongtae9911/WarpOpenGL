@@ -1,6 +1,7 @@
 #pragma once
 #include "CMesh.h"
 #include "CTransform.h"
+#include "CBoundingBox.h"
 
 class CObject
 {
@@ -9,7 +10,7 @@ public:
 	virtual ~CObject();
 
 	virtual bool Update(float elapsedTime);
-	virtual void Render();
+	virtual void Render(const glm::mat4 view, const glm::mat4 proj);
 
 	void SetDir(const Vector2& dir);
 
@@ -19,5 +20,6 @@ protected:
 	float m_speed;
 
 	shared_ptr<MeshInfo> m_mesh;
+	CBoundingBox* m_boundingBox;
 };
 
